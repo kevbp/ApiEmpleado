@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Clínica | Empleados</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-zinc-50 text-zinc-800">
+  <header class="max-w-4xl mx-auto px-4 py-6">
+    <h1 class="text-2xl font-semibold tracking-tight">Panel de Empleados</h1>
+    <p class="text-sm text-zinc-500">CRUD minimalista con estilo</p>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-4 space-y-6">
+    <!-- Card: Form -->
+    <section class="bg-white rounded-2xl shadow p-4 sm:p-6">
+      <h2 class="text-lg font-medium mb-4">Registrar / Actualizar</h2>
+      <form id="formEmpleado" class="grid sm:grid-cols-5 gap-3">
+        <input id="idEmpleado" type="number" placeholder="ID (para actualizar)" class="border rounded-xl px-3 py-2 focus:outline-none focus:ring w-full">
+        <input id="codEmpleado" type="number" placeholder="Código" class="border rounded-xl px-3 py-2 focus:outline-none focus:ring w-full" required>
+        <input id="nom" type="text" placeholder="Nombre" class="border rounded-xl px-3 py-2 focus:outline-none focus:ring w-full" required>
+        <input id="car" type="text" placeholder="Cargo" class="border rounded-xl px-3 py-2 focus:outline-none focus:ring w-full">
+        <input id="cole" type="text" placeholder="Colegio / Info" class="border rounded-xl px-3 py-2 focus:outline-none focus:ring w-full">
+
+        <div class="sm:col-span-5 flex gap-3">
+          <button type="submit" class="rounded-xl px-4 py-2 bg-black text-white hover:opacity-90 transition">Grabar</button>
+          <button id="btnActualizar" type="button" class="rounded-xl px-4 py-2 border hover:bg-zinc-50 transition">Actualizar</button>
+          <button id="btnLimpiar" type="button" class="rounded-xl px-4 py-2 border hover:bg-zinc-50 transition">Limpiar</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- Card: Búsqueda/Listado -->
+    <section class="bg-white rounded-2xl shadow p-4 sm:p-6">
+      <div class="flex items-end gap-3">
+        <div class="flex-1">
+          <label class="text-sm text-zinc-600">Buscar por ID</label>
+          <input id="buscarId" type="number" placeholder="Ej: 1" class="border rounded-xl px-3 py-2 w-full focus:outline-none focus:ring">
+        </div>
+        <button id="btnBuscar" class="rounded-xl px-4 py-2 border hover:bg-zinc-50 transition">Buscar</button>
+        <button id="btnListar" class="rounded-xl px-4 py-2 bg-black text-white hover:opacity-90 transition">Listar todos</button>
+      </div>
+      <p id="msg" class="mt-3 text-sm text-zinc-500"></p>
+    </section>
+
+    <!-- Tabla -->
+    <section class="bg-white rounded-2xl shadow p-4 sm:p-6">
+      <div class="overflow-x-auto">
+        <table class="min-w-full text-sm">
+          <thead class="text-left text-zinc-500">
+            <tr>
+              <th class="py-2">ID</th>
+              <th class="py-2">Código</th>
+              <th class="py-2">Nombre</th>
+              <th class="py-2">Cargo</th>
+              <th class="py-2">Colegio/Info</th>
+              <th class="py-2"></th>
+            </tr>
+          </thead>
+          <tbody id="tbody" class="divide-y"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer class="max-w-4xl mx-auto px-4 py-10 text-xs text-zinc-400 text-center">
+    Hecho con Tailwind · Demo académica
+  </footer>
+
+  <script src="/app.js"></script>
+</body>
+</html>
