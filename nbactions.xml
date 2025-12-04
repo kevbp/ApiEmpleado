@@ -9,7 +9,7 @@
             <goal>spring-boot:run</goal>
         </goals>
         <properties>
-            <run.jvmArguments>-noverify -XX:TieredStopAtLevel=1 </run.jvmArguments>
+            <run.jvmArguments>-Xmx256m -noverify -XX:TieredStopAtLevel=1 </run.jvmArguments>
             <run.mainClass>Clinica.ApiEmpleado.ApiEmpleadoApplication</run.mainClass>
             <Env.SPRING_OUTPUT_ANSI_ENABLED>always</Env.SPRING_OUTPUT_ANSI_ENABLED>
         </properties>
